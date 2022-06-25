@@ -16,7 +16,7 @@ def delay_print(s):
         time.sleep(0.05)
 
 
-# Game openeing
+# Game opening
 
 def bedroom():
     delay_print ("\n You are abruptly woken up to the sound of blaring sirens")
