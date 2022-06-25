@@ -1,7 +1,9 @@
+#Imports for pauses and typing functions
+
 import time
 import sys
 
-# Start
+# Start of game
 def start():
     bedroom()
 
@@ -14,7 +16,8 @@ def delay_print(s):
         time.sleep(0.05)
 
 
-# rooms
+# Game openeing
+
 def bedroom():
     delay_print ("\n You are abruptly woken up to the sound of blaring sirens")
     time.sleep(2)
@@ -33,7 +36,7 @@ def bedroom():
     elif Q1==  "3":
         phone1()
 
-# TV
+# TV choices
 
 def TV():
     delay_print (" You click on the TV, it's showing the national alert emergency channel")
@@ -57,7 +60,7 @@ def TV():
     elif  choice == "1":
         phone()
 
-# choice 3
+# phone choices
 
 def phone():
     delay_print("You grab your phone and notice 10 missed notifications")
@@ -94,7 +97,8 @@ def phone1():
         car()
     elif  choice =="2":
         gameover_2()
-# ROOM 4
+
+# car choice split
 
 def car():
     delay_print("\n You grab your keys and head for the door, you hear voices outside of the door...")
@@ -106,6 +110,26 @@ def car():
         opendoor()
     elif  choice == "2":
         gameover_4()
+
+def car2():
+    delay_print("You open the door slowly and see if anyone is outside")
+    time.sleep(2)
+    delay_print("\nYou notice someone down the hall and sneak in the other direction towards the parking ramp")
+    time.sleep(2)
+    delay_print("\n They see you and start running after you! You run as fast as you can and make it down the stairs to your car, but they are right behind...")
+    time.sleep(2)
+    delay_print("\n You grab the keys from your pocket and quickly open the door, slamming it behind you. They are pounding on the window begging for help...")
+    time.sleep(2)
+    delay_print("\n You turn the car on and speed away, can't take any chances. You are able to make it to the edge of the citybut hit a checkpoint.")
+    time.sleep(2)
+    delay_print("\n There are two choices, \n 1. You see an opening you might be able to make it through and escape the city. \n 2. You sit through the checkpoint to hopfully get out.")
+    time.sleep(2)
+    choice = input()
+
+    if  choice == "1":
+        opening()
+    elif  choice == "2":
+        checkpoint()
 
 # GAME OVER SCENARIOS
 
@@ -153,42 +177,6 @@ def gameover_2():
     else:
         retry()
 
-def car2():
-    delay_print("You open the door slowly and see if anyone is outside")
-    time.sleep(2)
-    delay_print("\nYou notice someone down the hall and sneak in the other direction towards the parking ramp")
-    time.sleep(2)
-    delay_print("\n They see you and start running after you! You run as fast as you can and make it down the stairs to your car, but they are right behind...")
-    time.sleep(2)
-    delay_print("\n You grab the keys from your pocket and quickly open the door, slamming it behind you. They are pounding on the window begging for help...")
-    time.sleep(2)
-    delay_print("\n You turn the car on and speed away, can't take any chances. You are able to make it to the edge of the citybut hit a checkpoint.")
-    time.sleep(2)
-    delay_print("\n There are two choices, \n 1. You see an opening you might be able to make it through and escape the city. \n 2. You sit through the checkpoint to hopfully get out.")
-    time.sleep(2)
-    choice = input()
-
-    if  choice == "1":
-        opening()
-    elif  choice == "2":
-        checkpoint()
-
-def opening():
-    delay_print("You gun it for the opening in the checkpoint the guards at the checkpoint open fire!")
-    time.sleep(2)
-    delay_print("\n You are able to make it through without injury somehow and the car still runs")
-    time.sleep(2)
-    delay_print("\n You are able to make it to your parents cabin and take refuge in the woods. The insanity never makes it this far. ")
-    time.sleep(4)
-    delay_print("\nDo you want to play again? (y / n)\n")
-    choice = input()
-    
-    if  choice == "y":
-        start()
-    elif  choice == "n":
-        exit(0)
-    else:
-        retry()
 
 def checkpoint():
     delay_print("You sit through the checkpoint for what must be an hour, wondering what is happening. Everyone seems to be losing their minds")
@@ -210,6 +198,7 @@ def checkpoint():
         exit(0)
     else:
         retry()
+        
 def gameover_4():
     delay_print("You notice the window is smashed in, unsure how it didnt wake you up you walk over to the window and look out.")
     time.sleep(2)
@@ -243,7 +232,25 @@ def retry():
     else:
         retry()
 
-#good ending
+#good endings
+
+def opening():
+    delay_print("You gun it for the opening in the checkpoint the guards at the checkpoint open fire!")
+    time.sleep(2)
+    delay_print("\n You are able to make it through without injury somehow and the car still runs")
+    time.sleep(2)
+    delay_print("\n You are able to make it to your parents cabin and take refuge in the woods. The insanity never makes it this far. ")
+    time.sleep(4)
+    delay_print("\nDo you want to play again? (y / n)\n")
+    choice = input()
+    
+    if  choice == "y":
+        start()
+    elif  choice == "n":
+        exit(0)
+    else:
+        retry()
+
 def opendoor():
     delay_print("You open the door slowly and see if anyone is outside")
     time.sleep(2)
@@ -265,6 +272,6 @@ def opendoor():
     else:
         retry()
 
-# --------------------------- MAIN ---------------------------
+
 
 start()
